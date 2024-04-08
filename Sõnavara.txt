@@ -7,3 +7,6 @@ Kirjed - Записи (строчки)
 Väljad - Поля (столбцы)
 Andmed - Данные
 Väärtused - Значение
+sisseastumis_kuupäev - Дата поступления
+---
+query - запрос - päring
