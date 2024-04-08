@@ -24,3 +24,39 @@ eesnimi, perenimi, isikukood, aadress, sisseastumis_kp)
 VALUES(
 'Artemi', 'Mihhalenkov', '12345678911', 'Tallinn', '2023-08-16');
 SELECT * FROM opilane;
+
+
+
+------------
+CREATE TABLE Language
+(
+ID int NOT NULL PRIMARY KEY,
+Code char(3) NOT NULL,
+Language varchar(50) NOT NULL,
+IsOfficial bit,
+-- True or False 1 or 0
+Percentage decimal(5,2)
+); 
+SELECT * FROM Language;
+
+-- andmete lisamine
+INSERT INTO Language(
+ID, Code, Language, isOfficial, Percentage)
+VALUES(
+'1', 'GER', 'Vene', 1, 80.5);
+SELECT * FROM Language;
+
+-- Tabeli struktuuri muutmine 
+ALTER TABLE Language ADD Capital varchar(20);
+SELECT * FROM Language;
+-- Veergu kutsutamine
+ALTER TABLE Language DROP COLUMN Capital;
+SELECT * FROM Language;
+-- 
+INSERT INTO Language(ID, Code, Language, isOfficial, Percentage, Capital)
+VALUES('2', 'GER', 'Vene', 1, 80.5,'Helsinki');
+SELECT * FROM Language;
+--uuendamine
+UPDATE Language SET Capital ='Tallinn'
+WHERE ID=1;
+SELECT * FROM Language;
