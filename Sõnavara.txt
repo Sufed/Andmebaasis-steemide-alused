@@ -1,0 +1,9 @@
+Andmebaas - База данных
+Andmebaaside haldussüsteem - Система управлением базами данных
+Tabel - Таблица
+Rida - Ряд
+Veer - Столб
+Kirjed - Записи (строчки)
+Väljad - Поля (столбцы)
+Andmed - Данные
+Väärtused - Значение
