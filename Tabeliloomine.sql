@@ -4,7 +4,15 @@ C:\Users\opilane>git config --global user.email "artemi.mihhalenkov@gmail.com"
 C:\Users\opilane>git config --global --list
 user.name=Artemi Mihhalenkov
 user.email=artemi.mihhalenkov@gmail.com
-
+C:\Users\opilane>cd Desktop
+C:\Users\opilane\Desktop>git clone https://github.com/Sufed/Andmebaasis-steemide-alused.git
+Cloning into 'Andmebaasis-steemide-alused'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 19 (delta 5), reused 11 (delta 2), pack-reused 0
+Receiving objects: 100% (19/19), 4.37 KiB | 4.37 MiB/s, done.
+Resolving deltas: 100% (5/5), done.
 
 
 SQL SERVER MANAGEMENT STUUDIO
