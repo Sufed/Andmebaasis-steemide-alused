@@ -13,7 +13,11 @@ remote: Compressing objects: 100% (16/16), done.
 remote: Total 19 (delta 5), reused 11 (delta 2), pack-reused 0
 Receiving objects: 100% (19/19), 4.37 KiB | 4.37 MiB/s, done.
 Resolving deltas: 100% (5/5), done.
-
+C:\Users\opilane\Desktop>cd Andmebaasis-steemide-alused
+C:\Users\opilane\Desktop\Andmebaasis-steemide-alused>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
 
 SQL SERVER MANAGEMENT STUUDIO
 
