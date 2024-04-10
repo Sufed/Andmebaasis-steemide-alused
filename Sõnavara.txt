@@ -1,4 +1,4 @@
-1Andmebaas - База данных
+Andmebaas - База данных
 Andmebaaside haldussüsteem - Система управлением базами данных
 Tabel - Таблица
 Rida - Ряд
