@@ -1,3 +1,12 @@
+Команды чтобы все скачать с github
+C:\Users\opilane>git config --global user.name "Artemi Mihhalenkov"
+C:\Users\opilane>git config --global user.email "artemi.mihhalenkov@gmail.com"
+C:\Users\opilane>git config --global --list
+user.name=Artemi Mihhalenkov
+user.email=artemi.mihhalenkov@gmail.com
+
+
+
 SQL SERVER MANAGEMENT STUUDIO
 
 --AB loomine
