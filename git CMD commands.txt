@@ -25,4 +25,4 @@ nothing to commit, working tree clean
 
 git add .
 git commit -a -m "Põhi ab sõnad on lisatud"
-gut push
+git push
