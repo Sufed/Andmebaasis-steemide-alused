@@ -39,6 +39,9 @@ CREATE TABLE piletiMyyk(
 	piletiMyykId int Primary Key identity(1,1),
 	kogus int,
 	kinokavaId int)
+
+INSERT INTO piletiMyyk (kogus)
+VALUES ('2'), ('4'), ('6'), ('8'), ('10')
 SELECT * FROM piletiMyyk
 DELETE FROM piletiMyyk
 
@@ -48,7 +51,11 @@ CREATE TABLE kinokava(
 	kuupaev DATETIME,
 	filmNimetus int,
 	piletihind int)
+
+INSERT INTO kinokava (kuupaev, piletihind)
+VALUES ('10.04.24', '12'), ('11.04.24', '11'), ('12.04.24', '12')
 SELECT * FROM kinokava
+
 DELETE FROM kinokava
 
 
@@ -65,6 +72,18 @@ CREATE TABLE film(
 	reklaam image)
 SELECT * FROM film
 
+
+INSERT INTO film (filmNimetus, pikkus, zanrId, rezisorId, filmTypeId)
+VALUES ('HorrorDad', 12, 100, 2, 9)
+SELECT * FROM film
+
+
+
+
+Update film SET zanrId=1;
+SELECT * FROM film
+DELETE FROM film
+INSERT 
 ---FK: film-->filmType
 ALTER TABLE film ADD FOREIGN KEY (filmTypeId) REFERENCES filmType(filmTypeId);
 
