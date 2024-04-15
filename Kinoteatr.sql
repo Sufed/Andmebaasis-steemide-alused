@@ -6,43 +6,48 @@ CREATE TABLE zanr(
 	zanrId int Primary Key identity(1,1),
 	zanrNimi varchar(25),
 	zanrKirjeldus TEXT)
-
 INSERT INTO zanr (zanrNimi, zanrKirjeldus)
 VALUES ('komöödia', 'naeruväärne'), ('perekonna', 'väga ilus'), ('õudus', 'väga hirmutav'), ('Ilukirjandus', 'Põnev'), ('Cartoon', 'Põnev')
 SELECT * FROM zanr
-DELETE FROM zanr
+
+
+
 
 ---Tabeli loomine filmType.
 CREATE TABLE filmType(
 	filmTypeId int Primary Key identity(1,1),
 	filmType varchar(25),
 	kirjeldus TEXT)
-
 INSERT INTO filmType (filmType, kirjeldus)
-VALUES ('3D', 'väga põnev 3D efekt'), ('2D', 'väga põnev 2D efekt'), ('1D', 'väga põnev 1D efekt'), ('4D', 'väga põnev 4D efekt'), ('5D', 'väga põnev 5D efekt')
+VALUES ('3D', 'väga põnev 3D efekt'), ('2D', 'väSga põnev 2D efekt'), ('1D', 'väga põnev 1D efekt'), ('4D', 'väga põnev 4D efekt'), ('5D', 'väga põnev 5D efekt')
 SELECT * FROM filmType
-DELETE FROM filmType
+
+
+
 
 ---Tabeli loomine rezisor.
 CREATE TABLE rezisor(
 	resizorId int Primary Key identity(1,1),
 	eesnimi varchar(25),
 	perenimi varchar(25))
-
 INSERT INTO rezisor (eesnimi, perenimi)
 VALUES ('Artemi', 'Mihhalenkov'), ('Nikita', 'Konjajev'), ('Georgi', 'Kadurin'), ('Stas', 'Tsugunov')
 SELECT * FROM rezisor
-DELETE FROM rezisor
+
+
+
+
 
 ---Tabeli loomine piletiMyyk.
 CREATE TABLE piletiMyyk(
 	piletiMyykId int Primary Key identity(1,1),
 	kogus int,
 	kinokavaId int)
-
-INSERT INTO piletiMyyk (kogus, kinokavaId, piletiMyykId)
-VALUES (2, 35, 34)
+INSERT INTO piletiMyyk (kogus, kinokavaId)
+VALUES (11, 3)
 SELECT * FROM piletiMyyk
+
+
 
 
 ---Tabeli loomine kinokava.
@@ -51,9 +56,8 @@ CREATE TABLE kinokava(
 	kuupaev DATETIME,
 	filmNimetus int,
 	piletihind int)
-
 INSERT INTO kinokava (kuupaev, filmNimetus, piletihind)
-VALUES ('10.04.24',  15, 12)
+VALUES ('12.04.24',  4, 12)
 SELECT * FROM kinokava
 
 
@@ -66,11 +70,8 @@ CREATE TABLE film(
 	rezisorId int,
 	filmTypeId int,
 	reklaam image)
-SELECT * FROM film
-
-
 INSERT INTO film (filmNimetus, pikkus, zanrId, rezisorId, filmTypeId)
-VALUES ('HorrorDad', 12, 7, 2, 9)
+VALUES ('Isa ja Ema', 12, 1, 1, 5)
 SELECT * FROM film
 
 
