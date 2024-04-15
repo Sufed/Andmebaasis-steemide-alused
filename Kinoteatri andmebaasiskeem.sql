@@ -6,7 +6,11 @@ CREATE TABLE zanr(
 	zanrId int Primary Key identity(1,1),
 	zanrNimi varchar(25),
 	zanrKirjeldus TEXT)
+
+INSERT INTO zanr (zanrNimi, zanrKirjeldus)
+VALUES ('komöödia', 'naeruväärne')
 SELECT * FROM zanr
+
 ---Loomine tabeli filmType
 CREATE TABLE filmType(
 	filmTypeId int Primary Key identity(1,1),
@@ -16,10 +20,14 @@ CREATE TABLE filmType(
 INSERT INTO filmType (filmType, kirjeldus)
 VALUES ('3D', 'väga põnev 3D efekt')
 SELECT * FROM filmType
+
 ---Loomine tabeli rezisor
 CREATE TABLE rezisor(
 	resizorId int Primary Key identity(1,1),
 	eesnimi varchar(25),
 	perenimi varchar(25))
-SELECT * FROM filmType
+
+INSERT INTO rezisor (eesnimi, perenimi)
+VALUES ('Artemi', 'Mihhalenkov')
+SELECT * FROM rezisor
 
