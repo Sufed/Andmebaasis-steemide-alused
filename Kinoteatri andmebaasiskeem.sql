@@ -40,8 +40,8 @@ CREATE TABLE piletiMyyk(
 	kogus int,
 	kinokavaId int)
 
-INSERT INTO piletiMyyk (kogus)
-VALUES ('2'), ('4'), ('6'), ('8'), ('10')
+INSERT INTO piletiMyyk (kogus, kinokavaId)
+VALUES (2, 35)
 SELECT * FROM piletiMyyk
 DELETE FROM piletiMyyk
 
@@ -52,8 +52,8 @@ CREATE TABLE kinokava(
 	filmNimetus int,
 	piletihind int)
 
-INSERT INTO kinokava (kuupaev, piletihind)
-VALUES ('10.04.24', '12'), ('11.04.24', '11'), ('12.04.24', '12')
+INSERT INTO kinokava (kuupaev, filmNimetus, piletihind)
+VALUES ('10.04.24',  15, 12)
 SELECT * FROM kinokava
 
 DELETE FROM kinokava
@@ -74,16 +74,14 @@ SELECT * FROM film
 
 
 INSERT INTO film (filmNimetus, pikkus, zanrId, rezisorId, filmTypeId)
-VALUES ('HorrorDad', 12, 100, 2, 9)
+VALUES ('HorrorDad', 12, 7, 2, 9)
 SELECT * FROM film
 
 
 
-
-Update film SET zanrId=1;
 SELECT * FROM film
 DELETE FROM film
-INSERT 
+
 ---FK: film-->filmType
 ALTER TABLE film ADD FOREIGN KEY (filmTypeId) REFERENCES filmType(filmTypeId);
 
