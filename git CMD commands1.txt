@@ -37,3 +37,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 git pull
 git push
+
+
+----
+Чтобы создать branch
+git branch название
+Чтобы в него перейт 
+git checkour название
