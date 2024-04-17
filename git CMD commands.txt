@@ -37,3 +37,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 git pull
 git push
+
+
+----
+Чтобы создать ветку
+C:\Users\opilane\Desktop\Andmebaasis-steemide-alused>git branch xampp
+Чтобы в неё зайти
+C:\Users\opilane\Desktop\Andmebaasis-steemide-alused>git checkout xampp
