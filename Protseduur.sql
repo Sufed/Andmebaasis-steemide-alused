@@ -117,3 +117,70 @@ BEGIN
 END;
 
 EXEC uuendaRezisorFilmis 'Jeff Besos', 'Test';
+
+
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('XS', 2010, 'Red', 70);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('X', 2002, 'Purple', 48);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('11', 2012, 'Orange', 92);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('11X', 2007, 'Maroon', 27);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('11XS', 2011, 'Red', 97);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('12', 2013, 'Red', 92);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('12X', 2008, 'Goldenrod', 4);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('12XS', 2006, 'Mauv', 55);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('13', 2010, 'Indigo', 42);
+insert into iphone1 (muudel, v_aasta, värv, mälu) values ('13X', 1968, 'Fuscia', 82);
+
+
+
+
+
+-----Loodamine
+CREATE TABLE iphone1(
+iphoneId int PRIMARY KEY identity(1,1),
+muudel varchar(50),
+v_aasta int,
+värv varchar(50),
+mälu int)
+
+SELECT * FROM iphone1
+
+----Looodamine värskenda värvi
+CREATE Procedure uuevarviphone2
+@uusvarv varchar(50),
+@muudel varchar(50)
+AS
+BEGIN
+	SELECT * FROM iphone1 WHERE muudel=@muudel;
+	UPDATE iphone1 SET värv=@uusvarv
+	WHERE muudel=@muudel;
+	SELECT * FROM iphone1 WHERE muudel=@muudel;;
+END;
+
+EXEC uuevarviphone2 'Kollane', 'X';
+
+----otsing esimese tähe järgi
+CREATE Procedure otsing1täheiphone1
+@muudel varchar(50)
+AS
+BEGIN
+	SELECT * FROM iphone1
+	WHERE muudel LIKE CONCAT(@muudel,'%');
+END;
+
+--käivitamine
+EXEC otsing1täheiphone1 '13';
+
+-----
+
+
+--kustutab sissetatud mudel järgi
+CREATE Procedure kustutaVarv111
+@varv varchar(50)
+AS
+BEGIN
+	SELECT * FROM iphone1;
+	DELETE FROM iphone1 WHERE värv=@varv;
+	SELECT * FROM iphone1;
+END;
+
+EXEC kustutaVarv111 Red;
