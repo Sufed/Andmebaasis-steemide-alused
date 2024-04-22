@@ -7,8 +7,7 @@ filmNimetus varchar(50),
 kestvus int,
 rezisoor varchar(50),
 v_aasta int)
---mackaroo.comr
-
+--mackaroo.com
 insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Alice''s Restaurant', 108, 'Noelyn Evreux', 2008);
 insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Mr. Magorium''s Wonder Emporium', 213, 'Moina Hallgarth', 1992);
 insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Less Than Zero', 100, 'Herta Howis', 2006);
@@ -69,6 +68,17 @@ Begin
 	SELECT * FROM film
 	WHERE filmNimetus LIKE CONCAT(@taht,'%');
 End;
-
 --käivitamine
 EXEC otsing1Taht 'A';
+
+--protseduur mis kustutab sissestatus id järgi
+CREATE Procedure kustutaFilm
+@id int
+AS
+BEGIN
+	SELECT * FROM film;
+	DELETE FROM film WHERE filmId=@id;
+	SELECT * FROM film;
+END;
+--käivitamine
+EXEC kustutaFilm 2;
