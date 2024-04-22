@@ -84,8 +84,8 @@ END;
 EXEC kustutaFilm 2;
 
 --proceduur, mis loeb filmide arv kokku
-CREATE Procedure filmideArv
+CREATE Procedure filmidArv
 AS
 SELECT COUNT(*) AS 'filmide Arv' FROM film;
 
-EXEC filmideArv;
+EXEC filmidArv;
