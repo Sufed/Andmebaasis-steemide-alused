@@ -61,3 +61,14 @@ insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('National Lam
 insert into film (filmNimetus, kestvus, rezisoor, v_aasta) values ('Stealth', 134, 'Gustavus Dumbar', 2003);
 
 SELECT * FROM film
+--filmiNimetus otsing esimese tähe järgi
+CREATE Procedure otsing1Taht
+@taht char(1)
+AS
+Begin
+	SELECT * FROM film
+	WHERE filmNimetus LIKE CONCAT(@taht,'%');
+End;
+
+--käivitamine
+EXEC otsing1Taht 'A';
