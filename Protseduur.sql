@@ -82,3 +82,10 @@ BEGIN
 END;
 --käivitamine
 EXEC kustutaFilm 2;
+
+--proceduur, mis loeb filmide arv kokku
+CREATE Procedure filmideArv
+AS
+SELECT COUNT(*) AS 'filmide Arv' FROM film;
+
+EXEC filmideArv;
