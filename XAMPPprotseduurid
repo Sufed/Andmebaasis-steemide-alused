@@ -68,4 +68,7 @@ CALL otsing1Taht ('A');
 CREATE PROCEDURE `kustutaFilm`(IN `id` INT) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN SELECT * FROM film; DELETE FROM film WHERE filmId=id; SELECT * FROM film; END; 
 
 -loeb filmide arv kokku
-CREATE PROCEDURE `filmidArv`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN SELECT COUNT(*) AS 'filmide Arv' FROM film; END; 
+CREATE PROCEDURE `filmidArv`() NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN SELECT COUNT(*) AS 'filmide Arv' FROM film; END;
+
+-uuendab rezisööri andmed filmiNimi järgi
+CREATE PROCEDURE `uuendaRezisorFilmis`(IN `filmnimetus` VARCHAR(50), IN `uusrezisoor` VARCHAR(50)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN SELECT * FROM film WHERE filmNimetus=filmNimetus; UPDATE film SET rezisoor=uusrezisoor WHERE filmNimetus=filmNimetus; SELECT * FROM film WHERE filmNimetus=filmNimetus; END; 
