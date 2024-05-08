@@ -6,10 +6,10 @@
 
 -- db loomine
 create database LOGITpv22
+USE LOGITpv22
 
 
-
---?
+-- Tabeli Gender loomine. 
 create table Gender
 (
 Id int NOT NULL primary key,
