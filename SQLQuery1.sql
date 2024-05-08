@@ -128,7 +128,7 @@ select * from Person where Email like '_@_.com'
 
 -- Kohandatud otsing. Nimesid, mis algavad sõnaga WAS, ei kuvata.
 select * from Person where Name like '[^WAS]%'
---- ?
+--- Kohandatud väljund. Kui linn on Gotham või New York, kuid vanus on suurem või võrdne 40 aastaga.
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
