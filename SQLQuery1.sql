@@ -214,7 +214,7 @@ values (10, 'Russell', 'Male', 8800, NULL)
 
 select * from Employees
 
----?
+---Näita erinevaid nimesid ja nende tunnuseid.
 select distinct Name, DepartmentId from Employees
 
 ---?
