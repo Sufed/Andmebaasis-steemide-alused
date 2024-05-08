@@ -331,7 +331,7 @@ declare @TotalEmployees int
 execute spTotalCount2 @TotalEmployees output
 select @TotalEmployees
 
---- ?
+---Protseduur, kus me sisestame ID ja saame selle nime.
 create proc spGetNameById1
 @Id int,
 @FirstName nvarchar(50) output
