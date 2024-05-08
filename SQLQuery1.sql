@@ -217,7 +217,7 @@ select * from Employees
 ---Näita erinevaid nimesid ja nende tunnuseid.
 select distinct Name, DepartmentId from Employees
 
----?
+---Kokkuvõtlik palk
 select sum(cast(Salary as int)) from Employees
 ---?
 select min(cast(Salary as int)) from Employees
