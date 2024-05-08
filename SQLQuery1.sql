@@ -282,7 +282,7 @@ spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+---
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
@@ -351,7 +351,7 @@ as begin
 	return (select FirstName from Employees where Id = @Id)
 end
 
--- ?
+-- Kirjutame töötaja nime ja saame tema isikut tõendava dokumendi.
 declare @EmployeeName nvarchar(50)
 exec @EmployeeName = spGetNameById2 1
 print 'Name of the employee = ' + @EmployeeName
