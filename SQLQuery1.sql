@@ -232,7 +232,7 @@ add DepartmentId
 int null
 
 
---?
+--Uue välja lisamine.
 alter table Employees
 add MiddleName nvarchar(30)
 
