@@ -26,3 +26,16 @@ BEGIN
 			inserted.linnanimi
 	From inserted;
 END
+--Delete Trigger - trigger, mis täidab logi tabeli, kui linn on kustatud tabelis.
+Create trigger LinnaKustutamine
+On linnad
+For Delete
+AS
+BEGIN
+	Insert Into logi(kasutaja, aeg, toiming, andmed)
+	Select USER,
+			GETDATE(),
+			'Linn on kustutatud',
+			deleted.linnanimi
+	From deleted;
+END
