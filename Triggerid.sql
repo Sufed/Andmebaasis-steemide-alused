@@ -13,6 +13,9 @@ aeg DATETIME,
 toiming  varchar(100),
 andmed TEXT,
 kasutaja varchar(100));
+Insert Into linnad(linnanimi, rahvaarv)
+Values ('Maardu', 12345);
+Select * from linnad;
 --Trigger -Insert- Trigger mis jälgib linnade sissestamine tabelis linnad.
 Create trigger LinnaLisamine
 On linnad
@@ -26,6 +29,12 @@ BEGIN
 			inserted.linnanimi
 	From inserted;
 END
+--kontroll
+Insert Into linnad(linnanimi, rahvaarv)
+Values ('Paide', 67890);
+Select * from linnad;
+Select * from logi;
+
 --Delete Trigger - trigger, mis täidab logi tabeli, kui linn on kustatud tabelis.
 Create trigger LinnaKustutamine
 On linnad
@@ -39,3 +48,28 @@ BEGIN
 			deleted.linnanimi
 	From deleted;
 END
+DROP TRIGGER LinnaUuendamine;
+--kontroll
+DELETE FROM linnad
+WHERE linnID=1;
+SELECT * FROM linnad
+SELECT * FROM logi
+
+Create trigger LinnaUuendamine
+On linnad
+For Update
+AS
+BEGIN
+	Insert Into logi(kasutaja, aeg, toiming, andmed)
+	Select USER,
+			GETDATE(),
+			'Linnaandmed on uunendatud',
+			concat('vanad: ', deleted.linnanimi, ' uued: ', inserted.linnanimi)
+	From deleted INNER JOIN inserted
+	ON deleted.linnID=inserted.linnID;
+END;
+
+Update linnad Set linnanimi='Tallinn2'
+WHERE linnID=3;
+Select * from linnad;
+Select * from logi;
