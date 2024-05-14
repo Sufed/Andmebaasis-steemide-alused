@@ -13,3 +13,16 @@ aeg DATETIME,
 toiming  varchar(100),
 andmed TEXT,
 kasutaja varchar(100));
+--Trigger -Insert- Trigger mis jälgib linnade sissestamine tabelis linnad.
+Create trigger LinnaLisamine
+On linnad
+For Insert
+AS
+BEGIN
+	Insert Into logi(kasutaja, aeg, toiming, andmed)
+	Select USER,
+			GETDATE(),
+			'Linn on lisatud',
+			inserted.linnanimi
+	From inserted;
+END
